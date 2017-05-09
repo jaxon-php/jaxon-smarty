@@ -1,7 +1,7 @@
 {
     "name": "jaxon-php/jaxon-smarty",
     "type": "library",
-    "description": "Jaxon view renderer for Smarty templates",
+    "description": "Jaxon view renderer for the Smarty template engine",
     "authors": [
         {"name": "Thierry Feuzeu"}
     ],
@@ -15,6 +15,9 @@
     "require": {
         "jaxon-php/jaxon-sentry": "~2.0",
         "smarty/smarty": "~3.1"
+    },
+    "provide": {
+        "jaxon-php/jaxon-view-smarty": "~2.0"
     },
     "autoload": {
         "psr-4": {

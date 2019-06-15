@@ -1,5 +1,5 @@
 <?php
 
-jaxon()->sentry()->addViewRenderer('smarty', function () {
+jaxon()->di()->getViewManager()->addRenderer('smarty', function () {
     return new Jaxon\Smarty\View();
 });

@@ -2,18 +2,20 @@
 
 namespace Jaxon\Smarty;
 
-use Jaxon\Sentry\Interfaces\View as ViewInterface;
-use Jaxon\Sentry\View\Store;
+use Jaxon\Contracts\View as ViewContract;
+use Jaxon\Ui\View\Store;
 
-class View implements ViewInterface
+use Smarty as Renderer;
+
+class View implements ViewContract
 {
-    use \Jaxon\Sentry\View\Namespaces;
+    use \Jaxon\Features\View\Namespaces;
 
     /**
      * Render a view
-     * 
+     *
      * @param Store         $store        A store populated with the view data
-     * 
+     *
      * @return string        The string representation of the view
      */
     public function render(Store $store)
@@ -31,7 +33,7 @@ class View implements ViewInterface
         $this->setCurrentNamespace($sNamespace);
 
         // View data
-        $xRenderer = new \Smarty;
+        $xRenderer = new Renderer();
         $xRenderer->addTemplateDir($this->sDirectory, $sNamespace);
         // $xRenderer->clearAllAssign();
         foreach($store->getViewData() as $sName => $xValue)

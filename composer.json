@@ -13,7 +13,7 @@
         "source": "https://github.com/jaxon-php/jaxon-smarty"
     },
     "require": {
-        "jaxon-php/jaxon-sentry": "~2.0",
+        "jaxon-php/jaxon-core": "dev-develop",
         "smarty/smarty": "~3.1"
     },
     "provide": {
